@@ -1,0 +1,58 @@
+{
+  "model_version": "0.1.0",
+  "training_date": "2026-10-09T13:12:48.971368+00:00",
+  "prediction_threshold": 0.5,
+  "ensemble_weights": {
+    "xgboost": 0.65,
+    "random_forest": 0.35
+  },
+  "dataset": {
+    "path": "C:\\Users\\akmal\\OneDrive\\Documents\\Default Project\\backend\\data\\synthetic_transactions.csv",
+    "synthetic": true,
+    "rows": 6000,
+    "fraud_cases": 240,
+    "fraud_rate": 0.04,
+    "train_rows": 4800,
+    "test_rows": 1200
+  },
+  "models": {
+    "random_forest": {
+      "accuracy": 0.9992,
+      "precision": 1.0,
+      "recall": 0.9792,
+      "f1": 0.9895,
+      "roc_auc": 1.0
+    },
+    "xgboost": {
+      "accuracy": 0.9975,
+      "precision": 0.9592,
+      "recall": 0.9792,
+      "f1": 0.9691,
+      "roc_auc": 0.9999
+    },
+    "ensemble": {
+      "accuracy": 0.9975,
+      "precision": 0.9592,
+      "recall": 0.9792,
+      "f1": 0.9691,
+      "roc_auc": 0.9999,
+      "average_precision": 0.9988,
+      "confusion_matrix": [
+        [
+          1150,
+          2
+        ],
+        [
+          1,
+          47
+        ]
+      ]
+    }
+  },
+  "notes": [
+    "Metrics are computed on the held-out test set only.",
+    "Class imbalance (about 4% fraud) is handled with class weights / scale_pos_weight on training data only.",
+    "The dataset is synthetic: these metrics are NOT evidence of real-world effectiveness.",
+    "Precision = fraction of flagged transactions that are truly fraud; recall = fraction of frauds caught. A false positive flags a legitimate transaction; a false negative misses a fraud."
+  ]
+}

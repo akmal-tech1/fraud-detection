@@ -1,0 +1,22 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+venv/
+.env
+
+# Local databases (regenerated on startup)
+*.db
+*.sqlite3
+
+# Trained model artifacts (re-generate with the training script, Phase 6)
+backend/models/*.joblib
+
+# Frontend
+frontend/node_modules/
+frontend/dist/
+
+# OS
+.DS_Store
+Thumbs.db

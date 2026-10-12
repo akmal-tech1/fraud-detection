@@ -1,0 +1,34 @@
+# Backend dependencies - Financial Fraud Risk Detection
+# Install from the backend/ folder:  python -m pip install -r requirements.txt
+
+# Web framework
+fastapi>=0.115
+uvicorn[standard]>=0.34
+
+# Request/response validation and ORM
+pydantic>=2.10
+sqlalchemy>=2.0.36
+
+# Authentication (Phase 12)
+python-jose[cryptography]>=3.3
+bcrypt>=4.2
+
+# CSV file uploads (Phase 9)
+python-multipart>=0.0.20
+
+# Environment variables (loads backend/.env)
+python-dotenv>=1.0
+
+# Machine learning stack (Phases 5-6)
+pandas>=2.2
+numpy>=2.0
+scikit-learn>=1.5
+xgboost>=2.1
+imbalanced-learn>=0.12
+joblib>=1.4
+matplotlib>=3.9
+seaborn>=0.13
+
+# Testing
+pytest>=8.3
+httpx>=0.28
